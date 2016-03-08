@@ -56,7 +56,10 @@ abstract class InMemoryRepository<ENTITY extends CommonEntity> implements IRepos
      * @return an array of entities with a name containing the given search string
      */
     findByName(name: string): ENTITY[] {
-        // FIXME
-        return [];
+        if (name == undefined || name == "") {
+          return this.getAll();
+        } else {
+          return this.getAll().filter(artist => artist.name.indexOf(name) > -1);
+        }  
     }
 }
