@@ -1,12 +1,13 @@
 # What every Java Developer should know about AngularJS 
 
-This is the project material for *exercise 2*.
+This is the project material for *exercise 3*.
 
 ## Preparation
 *Note*: Please note that you'll need to run `npm install` once in order to fetch the application's dependencies. 
 
 ## TODO
-Implement the template property of the `ArtistListDirective` in `app/artist/artist-list.directive.ts`.
+Add an `filter-by-name` parameter to the `ArtistListDirective` and use it to filter the list of artists
+by name.
 
 ## Build 
 
