@@ -1,0 +1,24 @@
+# Logs
+logs/*
+
+# Node Dependencies
+node_modules/
+
+# Temporary Files
+tmp
+.tscache
+
+# Mac
+.DS_Store
+
+# Eclipse
+.settings/
+.project
+
+# Webstorm
+.idea
+
+# Generated Files
+*.js.map
+/application.js
+/app/**/*.js
