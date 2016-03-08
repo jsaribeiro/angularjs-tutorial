@@ -1,13 +1,13 @@
 # What every Java Developer should know about AngularJS 
 
-This is the project material for *exercise 1*.
+This is the project material for *exercise 2*.
 
 ## Preparation
-*Note*: Please note that you'll need to run `npm install` once in order to fetch the application's depedencies. 
+*Note*: Please note that you'll need to run `npm install` once in order to fetch the application's dependencies. 
 
 ## TODO
-Fix the `findByName` method in `app/common/in-memory-repository.ts`.
+Implement the template property of the `ArtistListDirective` in `app/artist/artist-list.directive.ts`.
 
-## Run
+## Build 
 
-Run via `grunt test`. 
+Build via `grunt dist` and reload `index.html`.
