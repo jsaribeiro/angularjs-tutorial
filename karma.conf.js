@@ -1,30 +1,41 @@
-module.exports = function(config){
+'use strict';
+
+var webpackConfig = require('./webpack.test.js');
+webpackConfig.entry = {};
+
+
+module.exports = function (config) {
     config.set({
-
-        basePath : '',
-
-        files : [
-            'node_modules/angular/angular.js',
-            'node_modules/angular-mocks/angular-mocks.js',
-            'node_modules/lodash/lodash.js',
-            'application.js',
-            'app/**/*.spec.js'
-        ],
-
-        reporters: ['progress'],
-
+        basePath: '',
         frameworks: ['jasmine'],
-
-        browsers : ['Firefox'],
-
-        plugins : [
-            'karma-chrome-launcher',
+        port: 9876,
+        colors: true,
+        logLevel: config.LOG_INFO,
+        autoWatch: true,
+        browsers: ["Firefox"],
+        plugins: [                  
+            'karma-jasmine',
+            'karma-webpack',
             'karma-firefox-launcher',
-            'karma-ie-launcher',
-            'karma-safari-launcher',
+            'karma-chrome-launcher',
             'karma-opera-launcher',
-            'karma-jasmine'
-        ]
-
+            'karma-ie-launcher',
+            'karma-safari-launcher'
+        ],
+//        singleRun: true,
+        autoWatchBatchDelay: 300,
+        files: [
+                "src/specs.ts"
+        ],
+        preprocessors: {   
+          "src/specs.ts": ["webpack"]
+        },
+        webpackMiddleware: {
+            stats: {
+                chunkModules: false,
+                colors: true
+            }
+        },
+        webpack: webpackConfig
     });
 };

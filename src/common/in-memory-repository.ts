@@ -1,6 +1,7 @@
-/// <reference path="../_references.ts" />
 
-abstract class InMemoryRepository<ENTITY extends CommonEntity> implements IRepository<ENTITY> {
+import {CommonEntity, IRepository} from './repository.ts'
+
+export abstract class InMemoryRepository<ENTITY extends CommonEntity> implements IRepository<ENTITY> {
 
     protected entities: ENTITY[];
     protected currentId = 0;

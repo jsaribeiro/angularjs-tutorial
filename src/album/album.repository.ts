@@ -1,9 +1,12 @@
-/// <reference path="../_references.ts" />
 
-class AlbumRepository extends InMemoryRepository<Album> { }
+import {InMemoryRepository} from '../common/in-memory-repository.ts'
+import {Album} from './album.model.ts'
 
-angular
-    .module('econTutorial').service('AlbumRepository', AlbumRepository)
+export class AlbumRepository extends InMemoryRepository<Album> { }
+
+export default angular
+    .module('album.repo', [])
+    .service('AlbumRepository', AlbumRepository)
     .run(['AlbumRepository', (repo) => {
         let backToBlack = new Album(0,
             "Back to Black",
@@ -30,7 +33,7 @@ angular
                 "You Sent Me Flying",
                 "Cherry",
                 "Know You Now",
-                "Fuck Me Pumps",
+                "F*** Me Pumps",
                 "I Heard Love Is Blind",
                 "Moody's Mood For Love",
                 "Teo Licks",
@@ -161,5 +164,6 @@ angular
         repo.create(loaded);
         repo.create(roxyMusic);
         repo.create(doors);
-    }]);
+    }]
+).name;
 

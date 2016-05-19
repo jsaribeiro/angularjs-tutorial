@@ -1,0 +1,21 @@
+body {
+    font-family: sans-serif;
+    padding-left: 2em;
+    padding-bottom: 2em;
+}
+
+img {
+    border-radius: 1em;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+h2 {
+    color: #337ab7;
+}
+
+h3 {
+    color: #c7254e;
+}

@@ -1,6 +1,7 @@
-/// <reference path="../_references.ts" />
 
-class Album {
+import {CommonEntity} from '../common/repository.ts'
+
+export class Album implements CommonEntity {
 
     constructor(
         public artistId: number,

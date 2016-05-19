@@ -1,6 +1,8 @@
-/// <reference path="../_references.ts" />
 
-class AlbumListDirectiveController {
+import {AlbumRepository} from './album.repository.ts'
+import {Album} from './album.model.ts'
+
+export class AlbumListDirectiveController {
     public artistId: number;
     constructor(private repo: AlbumRepository) {}
     getAlbums(): Album[] {
@@ -8,7 +10,7 @@ class AlbumListDirectiveController {
     }
 }
 
-class AlbumListDirective implements ng.IDirective {
+export class AlbumListDirective implements ng.IDirective {
 
     restrict: string = 'E';
 
@@ -19,7 +21,7 @@ class AlbumListDirective implements ng.IDirective {
     controller = 'AlbumListDirectiveController';
 
     template: string = `<div ng-repeat="album in vm.getAlbums()">
-      <h2>{{album.name}}</h2>
+      <h3>{{album.name}}</h3>
       <ol>
         <li ng-repeat="track in album.tracks">
           {{track}}
@@ -32,7 +34,9 @@ class AlbumListDirective implements ng.IDirective {
     };
 }
 
-angular.module('econTutorial')
+export default angular
+    .module('album', ['album.repo'])
     .directive('albumList', ['AlbumRepository', () => new AlbumListDirective()])
     .controller('AlbumListDirectiveController', ['AlbumRepository', (albumRepo: AlbumRepository) =>
-        new AlbumListDirectiveController(albumRepo)]);
+        new AlbumListDirectiveController(albumRepo)]
+    ).name;

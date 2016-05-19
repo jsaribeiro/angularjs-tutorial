@@ -1,14 +1,13 @@
-/// <reference path="../_references.ts" />
 
 /**
  * Common interface for all entities.
  */
-interface CommonEntity {
+export interface CommonEntity {
     id?: number
     name: string
 }
 
-interface IRepository<T extends CommonEntity> {
+export interface IRepository<T extends CommonEntity> {
     /**
      * Returns all entities of this repository.
      *
