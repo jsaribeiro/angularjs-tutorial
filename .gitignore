@@ -1,3 +1,6 @@
+# Build directory
+dist/
+
 # Logs
 logs/*
 
@@ -13,7 +16,6 @@ tmp
 
 # Eclipse
 .settings/
-.project
 
 # Webstorm
 .idea

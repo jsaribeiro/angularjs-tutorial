@@ -3,7 +3,6 @@
 var webpackConfig = require('./webpack.test.js');
 webpackConfig.entry = {};
 
-
 module.exports = function (config) {
     config.set({
         basePath: '',
@@ -12,7 +11,7 @@ module.exports = function (config) {
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: true,
-        browsers: ["Firefox"],
+        browsers: ["Chrome"],
         plugins: [                  
             'karma-jasmine',
             'karma-webpack',
@@ -22,7 +21,7 @@ module.exports = function (config) {
             'karma-ie-launcher',
             'karma-safari-launcher'
         ],
-//        singleRun: true,
+        singleRun: true,
         autoWatchBatchDelay: 300,
         files: [
                 "src/specs.ts"

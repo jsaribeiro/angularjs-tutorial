@@ -4,11 +4,9 @@
     <meta charset="utf-8"/>
 </head>
 <body ng-app="econTutorial">
-<div class="container-fluid" ng-controller="SearchController as searchCtrl">
+<div>
     <h1>Artists</h1>
-    <label for="artist-search">Search artist:</label>
-    <input id="artist-search" type="text" ng-model="searchCtrl.searchString"/>
-    <artist-list filter-by-name="searchCtrl.searchString"></artist-list>
+    <artist-list></artist-list>
 </div>
 </body>
 </html>
