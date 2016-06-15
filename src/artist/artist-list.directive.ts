@@ -9,7 +9,7 @@ class ArtistListDirectiveController {
     constructor(private repo: ArtistRepository) { }
 
     getArtists(): Artist[] {
-        return this.repo.getAll();
+        return this.repo.findByName(this.searchString);	
     }
 }
 
@@ -20,11 +20,15 @@ class ArtistListDirective implements ng.IDirective {
     controller: string = 'ArtistListDirectiveController';
 
     controllerAs: string = 'vm';
+    
+    bindToController: Object = {
+      searchString: "=filterByName"
+    };
 
     template: string = `<div ng-repeat="artist in vm.getArtists()">
-       <h2>{{artist.name}}</h2>
-       <img ng-src="{{artist.imagePath}}"/>
-       <album-list artist-id="{{artist.id}}"></album-list>
+      <h2>{{artist.name}}</h2>
+      <img ng-src="{{artist.imagePath}}" width="300px" height="300px"/>
+      <album-list artist-id="{{artist.id}}"></album-list>
     </div>`;
 }
 

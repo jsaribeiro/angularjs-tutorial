@@ -9,7 +9,7 @@ module.exports = {
 		'./src/index.ts'
 	],
 	resolve: {
-		extensions: ['.ts', '.js', '']
+		extensions: ['.ts', '.js', '.tsx', '.jsx', '']
 	},
 	output: {
 		path: path.join(__dirname, 'dist'),
@@ -42,4 +42,4 @@ module.exports = {
 		port: 3333,
 		hot: true
 	}
-};
+}
