@@ -57,7 +57,10 @@ export abstract class InMemoryRepository<ENTITY extends CommonEntity> implements
      * @return an array of entities with a name containing the given search string
      */
     findByName(name: string): ENTITY[] {
-        // FIXME
-        return this.getAll();
+        if (name === undefined || name === "") {
+            return this.getAll();
+        } else {
+            return this.getAll().filter(element => element.name.indexOf(name) > -1);
+        }
     }
 }
