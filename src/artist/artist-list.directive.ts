@@ -21,7 +21,11 @@ class ArtistListDirective implements ng.IDirective {
 
     controllerAs: string = 'vm';
 
-    template: string = `FIXME`;
+    template: string = `<div ng-repeat="artist in vm.getArtists()">
+       <h2>{{artist.name}}</h2>
+       <img ng-src="{{artist.imagePath}}"/>
+       <album-list artist-id="{{artist.id}}"></album-list>
+    </div>`;
 }
 
 export default angular

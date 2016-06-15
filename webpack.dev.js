@@ -9,7 +9,7 @@ module.exports = {
 		'./src/index.ts'
 	],
 	resolve: {
-		extensions: ['.ts', '.js']
+		extensions: ['.ts', '.js', '']
 	},
 	output: {
 		path: path.join(__dirname, 'dist'),
